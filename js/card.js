@@ -24,6 +24,7 @@ export default class Card {
   _setEventListeners() {
     this._inner.addEventListener("click", () => {
       this._inner.classList.add("flip-card_active");
+      this._inner.dataset.ingame = true;
     });
   }
 }

@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" href="css/index.css"/>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/index.css" />
     <title>Игрулька</title>
-</head>
-<body>
-
-<div class="page">
-
-</div>
-
-<template class="template-card">
-    <div class="flip-card">
-        <div class="flip-card-inner">
-            <div class="flip-card-front">
-            </div>
-            <div class="flip-card-back">
-                <img class="img-card" src="./img/vorona.jpg" alt="card">
-            </div>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1 class="header__title">Найди одинаковые карточки</h1>
+        <div class="header__btn-wrap">
+          <button class="header__btn header__btn_type_create">
+            Показать карточки
+          </button>
+          <button class="header__btn header__btn_type_start">
+            Начать игру
+          </button>
         </div>
+      </header>
+      <main>
+        <section class="cards">
+          <!-- Контейнер для карточек -->
+        </section>
+      </main>
     </div>
-</template>
 
-<script type="module" src="js/index.js"></script>
-</body>
+    <template class="template-card">
+      <div class="flip-card">
+        <div class="flip-card-inner" data-ingame="false">
+          <div class="flip-card-front"></div>
+          <div class="flip-card-back">
+            <img class="img-card" src="" alt="card" />
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <script type="module" src="js/index.js"></script>
+  </body>
 </html>

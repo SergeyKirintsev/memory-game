@@ -1,14 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
 .page {
   margin: 0 auto;
+  padding: 0 20px 0;
   min-width: 320px;
-  max-width: 1280px;
-  /* border: 1px solid red; */
+  max-width: 760px;
+  font-family: "Press Start 2P", "Helvetica Neue", Arial, sans-serif;
+}
 
+.header {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.header__title {
+  margin: 0 0 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.header__btn-wrap {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header__btn {
+  width: 300px;
+  height: 40px;
+
+  border: none;
+  /* font-family: "Press Start 2P"; */
+  background-color: #4caf50;
+  color: #fff;
+  font-size: 22px;
+}
+
+.cards {
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fit, 150px);
   grid-auto-rows: 150px;
-  gap: 30px;
+  gap: 15px;
 }
 
 img {
@@ -23,6 +56,13 @@ img {
   height: 100%;
   /* border: 1px solid #f1f1f1; */
   perspective: 500px; /* Remove this if you don't want the 3D effect */
+}
+
+.flip-card_disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  transform: scale(0.8);
+  transition: 0.4s ease;
 }
 
 /* This container is needed to position the front and back side */
@@ -61,4 +101,11 @@ img {
   /*background-color: dodgerblue;*/
   /*color: white;*/
   transform: rotateY(180deg);
+}
+
+@media screen and (max-width: 700px) {
+  .cards {
+    grid-template-columns: repeat(auto-fit, 130px);
+    grid-auto-rows: 130px;
+  }
 }
