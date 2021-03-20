@@ -5,10 +5,24 @@ const cardsArr = getArray();
 const cardsContainerEl = document.querySelector(".cards");
 const startGameBtn = document.querySelector(".header__btn_type_start");
 const createCardsBtn = document.querySelector(".header__btn_type_create");
+const popup = document.querySelector(".popup");
+const endGameBtn = document.querySelector(".endgame__button");
 
 startGameBtn.addEventListener("click", startGame);
 createCardsBtn.addEventListener("click", createGame);
 cardsContainerEl.addEventListener("click", checkGame);
+endGameBtn.addEventListener("click", () => {
+  popup.classList.remove("popup_active");
+  createGame();
+});
+
+function isGameOver() {
+  const allCards = document.querySelectorAll(".flip-card");
+  const disabledCards = document.querySelectorAll(".flip-card_disabled");
+  if (allCards.length === disabledCards.length) {
+    popup.classList.add("popup_active");
+  }
+}
 
 function checkGame() {
   const activeCards = document.querySelectorAll("[data-ingame=true]");
@@ -22,6 +36,7 @@ function checkGame() {
           const cardEl = el.closest(".flip-card");
           cardEl.classList.add("flip-card_disabled");
         });
+        isGameOver();
       }, 1400);
     } else {
       setTimeout(() => {
