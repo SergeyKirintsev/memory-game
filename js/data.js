@@ -6,14 +6,14 @@ function shuffle(array) {
 }
 
 const initialCards = [
-  "00.jpg",
-  "01.jpg",
-  "02.jpg",
-  "03.jpg",
-  "04.jpg",
-  "05.jpg",
-  "06.jpg",
-  "07.jpg",
+  "card00.jpg",
+  "card01.jpg",
+  "card02.jpg",
+  "card03.jpg",
+  "card04.jpg",
+  "card05.jpg",
+  "card06.jpg",
+  "card07.jpg",
 ];
 
 const getArray = () => {
